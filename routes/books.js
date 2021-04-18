@@ -13,11 +13,14 @@ router.get('/', async (req, res) => {
     }
     let books = [];
     snapshot.forEach(document => {
-    const data = document.data();
-    books.push(data);
+        const data = document.data();
+        data.id = document.id
+        books.push(data);
     });
     res.send(books); 
 })
+
+
 
 
 module.exports = router;
