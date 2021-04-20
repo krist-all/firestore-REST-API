@@ -18,10 +18,6 @@ app.use((req, res, next) => {
 
 app.use( express.static(staticFolder) );
 
-app.get('/', (req, res) => {
-    res.send('Firestore project')
-})
-
 app.use('/books', books)
 
 app.listen(PORT, () => {
